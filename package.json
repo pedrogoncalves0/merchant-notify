@@ -1,0 +1,24 @@
+{
+  "name": "merchant-notify",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc",
+    "start": "npm run build && node build/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.11.0",
+    "dotenv": "^16.3.1",
+    "websocket": "^1.0.34"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.4",
+    "@types/websocket": "^1.0.5",
+    "typescript": "^5.1.6"
+  }
+}
