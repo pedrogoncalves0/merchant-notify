@@ -24,7 +24,7 @@ export class NotifyMerchantsService {
             this.getMessageIdentifier(merchantGroup)
         );
 
-        return message != null;
+        return !message;
     }
     
     async notifyNewMerchantAppearance(server: LostArkServer, merchantGroup: IMerchantGroup): Promise<void> {
@@ -64,7 +64,8 @@ export class NotifyMerchantsService {
 
             await this.discord.editMessage(message, newMessage)
         } catch (err) {
-            this.logger.error('failed to update merchant appearance', err);
+            console.error(err);
+            this.logger.info('failed to update merchant votes');
         }
     }
 

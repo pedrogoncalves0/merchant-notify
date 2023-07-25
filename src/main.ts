@@ -1,10 +1,8 @@
 import 'dotenv/config'
 
-import { DiscordClient, LostMerchantsClient, MessageType } from "./clients";
+import { DiscordClient, LostMerchantsClient } from "./clients";
 import { sleep } from "./common/utils";
 import { NotifyMerchantsController } from './controllers';
-import { NotifyMerchantsService } from './services';
-import { Server } from './common/enums';
 
 const main = async () => {
     const discordClient = DiscordClient.getInstance();
