@@ -1,0 +1,770 @@
+{
+    "Dorella": {
+      "Name": "Dorella",
+      "Region": "Feiton",
+      "SortOrder": 12,
+      "AppearanceTimes": [ "01:30:00", "04:30:00", "05:30:00", "07:30:00", "08:30:00", "11:30:00", "13:30:00", "16:30:00", "17:30:00", "19:30:00", "20:30:00", "23:30:00" ],
+      "Zones": [ "Kalaja" ],
+      "Cards": [
+        {
+          "Name": "Goulding",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Levi",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Kaldor",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Jederico",
+          "Rarity": "Epic"
+        }
+      ],
+      "Rapports": [
+        {
+          "Name": "Book of Survival",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Broken Dagger",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Desiccated Wooden Statue",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Red Moon Tears",
+          "Rarity": "Legendary"
+        }
+      ]
+    },
+    "Morris": {
+      "Name": "Morris",
+      "Region": "East Luterra",
+      "SortOrder": 4,
+      "AppearanceTimes": [ "01:30:00", "04:30:00", "05:30:00", "07:30:00", "08:30:00", "11:30:00", "13:30:00", "16:30:00", "17:30:00", "19:30:00", "20:30:00", "23:30:00" ],
+      "Zones": [ "Dyorika Plain", "Flowering Orchard", "Sunbright Hill" ],
+      "Cards": [
+        {
+          "Name": "Brinewt",
+          "Rarity": "Uncommon"
+        },
+        {
+          "Name": "Morpheo",
+          "Rarity": "Uncommon"
+        },
+        {
+          "Name": "Meehan",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Thunderwings",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Delain Armen",
+          "Rarity": "Legendary"
+        }
+      
+      ],
+      "Rapports": [
+        {
+          "Name": "Azenaporium Brooch",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Dyorika Straw Hat",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Model of Luterra's Sword",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Chain War Chronicles",
+          "Rarity": "Legendary"
+        }
+      ]
+    },
+    "Lucas": {
+      "Name": "Lucas",
+      "Region": "Yudia",
+      "SortOrder": 2,
+      "AppearanceTimes": [ "01:30:00", "04:30:00", "05:30:00", "07:30:00", "08:30:00", "11:30:00", "13:30:00", "16:30:00", "17:30:00", "19:30:00", "20:30:00", "23:30:00" ],
+      "Zones": [ "Ozhorn Hill", "Saland Hill" ],
+      "Cards": [
+        {
+          "Name": "Giant Worm",
+          "Rarity": "Uncommon"
+        },
+        {
+          "Name": "Morina",
+          "Rarity": "Uncommon"
+        },
+        {
+          "Name": "Thunder",
+          "Rarity": "Rare"
+        }
+      ],
+      "Rapports": [
+        {
+          "Name": "Yudia Natural Salt",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Yudia Spellbook",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Sky Reflection Oil",
+          "Rarity": "Legendary"
+        }
+      ]
+    },
+    "Mac": {
+      "Name": "Mac",
+      "Region": "Anikka",
+      "SortOrder": 6,
+      "AppearanceTimes": [ "01:30:00", "04:30:00", "05:30:00", "07:30:00", "08:30:00", "11:30:00", "13:30:00", "16:30:00", "17:30:00", "19:30:00", "20:30:00", "23:30:00" ],
+      "Zones": [ "Delphi Township", "Melody Forest", "Prisma Valley", "Rattan Hill", "Twilight Mists" ],
+      "Cards": [
+        {
+          "Name": "Madam Moonscent",
+          "Rarity": "Uncommon"
+        },
+        {
+          "Name": "Sir Druden",
+          "Rarity": "Uncommon"
+        },
+        {
+          "Name": "Sir Valleylead",
+          "Rarity": "Uncommon"
+        },
+        {
+          "Name": "Wei",
+          "Rarity": "Legendary"
+        }
+      ],
+      "Rapports": [
+        {
+          "Name": "Tournament Entrance Stamp",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Angler's Fishing Pole",
+          "Rarity": "Legendary"
+        }
+      ]
+    },
+    "Jeffrey": {
+      "Name": "Jeffrey",
+      "Region": "Shushire",
+      "SortOrder": 9,
+      "AppearanceTimes": [ "01:30:00", "04:30:00", "05:30:00", "07:30:00", "08:30:00", "11:30:00", "13:30:00", "16:30:00", "17:30:00", "19:30:00", "20:30:00", "23:30:00" ],
+      "Zones": [ "Bitterwind Hill", "Frozen Sea", "Iceblood Plateau", "Icewing Heights", "Lake Eternity" ],
+      "Cards": [
+        {
+          "Name": "Javern",
+          "Rarity": "Uncommon"
+        },
+        {
+          "Name": "Sian",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Madnick",
+          "Rarity": "Epic"
+        }
+      ],
+      "Rapports": [
+        {
+          "Name": "Shimmering Essence",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Sirius's Holy Book",
+          "Rarity": "Legendary"
+        }
+      ]
+    },
+    "Ben": {
+      "Name": "Ben",
+      "Region": "Rethramis",
+      "SortOrder": 1,
+      "AppearanceTimes": [ "00:30:00", "03:30:00", "04:30:00", "06:30:00", "07:30:00", "10:30:00", "12:30:00", "15:30:00", "16:30:00", "18:30:00", "19:30:00", "22:30:00" ],
+      "Zones": [ "Ankumo Mountain", "Loghill", "Rethramis Border" ],
+      "Cards": [
+        {
+          "Name": "Siera",
+          "Rarity": "Uncommon"
+        },
+        {
+          "Name": "Prideholme Neria",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Varut",
+          "Rarity": "Rare"
+        }
+      ],
+      "Rapports": [
+        {
+          "Name": "Fancier Bouquet",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Prideholme Potato",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Rethramis Holy Water",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Pit-a-Pat Chest",
+          "Rarity": "Legendary"
+        }
+      ]
+    },
+    "Laitir": {
+      "Name": "Laitir",
+      "Region": "Yorn",
+      "SortOrder": 11,
+      "AppearanceTimes": [ "00:30:00", "03:30:00", "04:30:00", "06:30:00", "07:30:00", "10:30:00", "12:30:00", "15:30:00", "16:30:00", "18:30:00", "19:30:00", "22:30:00" ],
+      "Zones": [ "Black Anvil Mine", "Hall of Promise", "Iron Hammer Mine", "Unfinished Garden", "Yorn's Cradle" ],
+      "Cards": [
+        {
+          "Name": "Great Castle Neria",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Piyer",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Kaysarr",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Balthorr",
+          "Rarity": "Legendary"
+        }
+      ],
+      "Rapports": [
+        {
+          "Name": "Piyer's Secret Textbook",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Fargar's Beer",
+          "Rarity": "Legendary"
+        }
+      ]
+    },
+    "Peter": {
+      "Name": "Peter",
+      "Region": "North Vern",
+      "SortOrder": 8,
+      "AppearanceTimes": [ "00:30:00", "03:30:00", "04:30:00", "06:30:00", "07:30:00", "10:30:00", "12:30:00", "15:30:00", "16:30:00", "18:30:00", "19:30:00", "22:30:00" ],
+      "Zones": [ "Balankar Mountains", "Fesnar Highland", "Parna Forest", "Port Krona", "Vernese Forest" ],
+      "Cards": [
+        {
+          "Name": "Gideon",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Payla",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Thar",
+          "Rarity": "Epic"
+        }
+      ],
+      "Rapports": [
+        {
+          "Name": "Crystallized Magick",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Exquisite Music Box",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Goblin Yam",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Magick Cloth",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Queen's Knights Application",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Vern's Founding Coin",
+          "Rarity": "Legendary"
+        }
+      ]
+    },
+    "Malone": {
+      "Name": "Malone",
+      "Region": "West Luterra",
+      "SortOrder": 3,
+      "AppearanceTimes": [ "00:30:00", "02:30:00", "05:30:00", "06:30:00", "08:30:00", "09:30:00", "12:30:00", "14:30:00", "17:30:00", "18:30:00", "20:30:00", "21:30:00" ],
+      "Zones": [ "Battlebound Plains", "Bilbrin Forest", "Lakebar", "Medrick Monastery", "Mount Zagoras" ],
+      "Cards": [
+        {
+          "Name": "Berhart",
+          "Rarity": "Uncommon"
+        },
+        {
+          "Name": "Cadogan",
+          "Rarity": "Uncommon"
+        },
+        {
+          "Name": "Cassleford",
+          "Rarity": "Rare"
+        }
+      ],
+      "Rapports": [
+        {
+          "Name": "Black Rose",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Lakebar Tomato Juice",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Stalwart Cage",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Chain War Chronicles",
+          "Rarity": "Legendary"
+        }
+      ]
+    },
+    "Burt": {
+      "Name": "Burt",
+      "Region": "East Luterra",
+      "SortOrder": 4,
+      "AppearanceTimes": [ "00:30:00", "02:30:00", "05:30:00", "06:30:00", "08:30:00", "09:30:00", "12:30:00", "14:30:00", "17:30:00", "18:30:00", "20:30:00", "21:30:00" ],
+      "Zones": [ "Blackrose Chapel", "Borea's Domain", "Croconys Seashore", "Leyar Terrace" ],
+      "Cards": [
+        {
+          "Name": "Nox",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Seria",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Thunderwings",
+          "Rarity": "Epic"
+        }
+      ],
+      "Rapports": [
+        {
+          "Name": "Azenaporium Brooch",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Dyorika Straw Hat",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Model of Luterra's Sword",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Chain War Chronicles",
+          "Rarity": "Legendary"
+        }
+      ]
+    },
+    "Oliver": {
+      "Name": "Oliver",
+      "Region": "Tortoyk",
+      "SortOrder": 5,
+      "AppearanceTimes": [ "00:30:00", "02:30:00", "05:30:00", "06:30:00", "08:30:00", "09:30:00", "12:30:00", "14:30:00", "17:30:00", "18:30:00", "20:30:00", "21:30:00" ],
+      "Zones": [ "Forest of Giants", "Seaswept Woods", "Skyreach Steppe", "Sweetwater Forest" ],
+      "Cards": [
+        {
+          "Name": "Egg of Creation",
+          "Rarity": "Uncommon"
+        },
+        {
+          "Name": "Eolh",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Mokamoka",
+          "Rarity": "Epic"
+        }
+      ],
+      "Rapports": [
+        {
+          "Name": "Mokoko Carrot",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Oversized Ladybug Doll",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Round Glass Piece",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Shy Wind Flower Pollen",
+          "Rarity": "Legendary"
+        }
+      ]
+    },
+    "Nox": {
+      "Name": "Nox",
+      "Region": "Arthetine",
+      "SortOrder": 7,
+      "AppearanceTimes": [ "00:30:00", "02:30:00", "05:30:00", "06:30:00", "08:30:00", "09:30:00", "12:30:00", "14:30:00", "17:30:00", "18:30:00", "20:30:00", "21:30:00" ],
+      "Zones": [ "Arid Path", "Nebelhorn", "Riza Falls", "Scraplands", "Totrich", "Windbringer Hills" ],
+      "Cards": [
+        {
+          "Name": "Bergstrom",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Stern Neria",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Krause",
+          "Rarity": "Epic"
+        }
+      ],
+      "Rapports": [
+        {
+          "Name": "Energy X7 Capsule",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Fine Gramophone",
+          "Rarity": "Legendary"
+        }
+      ]
+    },
+    "Aricer": {
+      "Name": "Aricer",
+      "Region": "Rohendel",
+      "SortOrder": 10,
+      "AppearanceTimes": [ "00:30:00", "02:30:00", "05:30:00", "06:30:00", "08:30:00", "09:30:00", "12:30:00", "14:30:00", "17:30:00", "18:30:00", "20:30:00", "21:30:00" ],
+      "Zones": [ "Breezesome Brae", "Elzowin's Shade", "Glass Lotus Lake", "Lake Shiverwave", "Xeneela Ruins" ],
+      "Cards": [
+        {
+          "Name": "Alifer",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Lenora",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Gnosis",
+          "Rarity": "Epic"
+        }
+      ],
+      "Rapports": [
+        {
+          "Name": "Danube's Earrings",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Elemental's Feather",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Soundstone of Dawn",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Sylvain Queens' Blessing",
+          "Rarity": "Legendary"
+        }
+      ]
+    },
+    "Rayni": {
+      "Name": "Rayni",
+      "Region": "Punika",
+      "SortOrder": 13,
+      "AppearanceTimes": [ "00:30:00", "02:30:00", "05:30:00", "06:30:00", "08:30:00", "09:30:00", "12:30:00", "14:30:00", "17:30:00", "18:30:00", "20:30:00", "21:30:00" ],
+      "Zones": [ "Secret Forest", "Starsand Beach", "Tideshelf Path", "Tikatika Colony" ],
+      "Cards": [
+        {
+          "Name": "Cicerra",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Seto",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Stella",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Albion",
+          "Rarity": "Epic"
+        }
+      ],
+      "Rapports": [
+        {
+          "Name": "Hollowfruit",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Pinata Crafting Set",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Rainbow Tikatika Flower",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Oreha Viewing Stone",
+          "Rarity": "Legendary"
+        }
+      ],
+      "Tradeskills": [
+        "(Only Green Pouch)",
+        "Secret Pouch: Soft Pouch",
+        "Secret Pouch: Splendid Platinum Pouch"
+      ]
+    },
+    "Evan": {
+      "Name": "Evan",
+      "Region": "South Vern",
+      "SortOrder": 14,
+      "AppearanceTimes": [ "00:30:00", "03:30:00", "04:30:00", "06:30:00", "07:30:00", "10:30:00", "12:30:00", "15:30:00", "16:30:00", "18:30:00", "19:30:00", "22:30:00" ],
+      "Zones": [ "Bellion Ruins", "Candaria Territory" ],
+      "Cards": [
+        {
+          "Name": "Killian",
+          "Rarity": "Uncommon"
+        },
+        {
+          "Name": "Satra",
+          "Rarity": "Uncommon"
+        },
+        {
+          "Name": "Lujean",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Vern Zenlord",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Xereon",
+          "Rarity": "Rare"
+        }
+      ],
+      "Rapports": [
+        {
+          "Name": "Feather Fan",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Febre Potion",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Mockup Firefly",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Necromancer's Records",
+          "Rarity": "Legendary"
+        }
+      ],
+      "Tradeskills": [
+        "Secret Pouch: Gem-studded Pouch",
+        "Secret Pouch: Tough Leather Pouch",
+        "Secret Pouch: Marvelous Magick Pouch"
+      ]
+    },
+    "Serihan": {
+      "Name": "Serihan",
+      "Region": "Rowen",
+      "SortOrder": 15,
+      "AppearanceTimes": [ "01:30:00", "09:30:00", "15:30:00", "21:30:00" ],
+      "Zones": [ "Fang River", "The Wolflands" ],
+      "Cards": [
+        {
+          "Name": "Revellos",
+          "Rarity": "Uncommon"
+        },
+        {
+          "Name": "Rowen Zenlord",
+          "Rarity": "Uncommon"
+        },
+        {
+          "Name": "Anke",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Arno",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Baskia",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Hanun",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Marinna",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Piela",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Sylus",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Wilhelm",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Danika",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Myun Hidaka",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Osphere",
+          "Rarity": "Epic"
+        }
+      ],
+      "Rapports": [
+        {
+          "Name": "Enya Balm",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Top Quality Beef Jerky",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Wolf Fang Necklace",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Warm Earmuffs",
+          "Rarity": "Legendary"
+        }
+      ]
+    },
+    "Flanos": {
+      "Name": "Flanos",
+      "Region": "Elgacia",
+      "SortOrder": 16,
+      "AppearanceTimes": [ "00:30:00", "03:30:00", "04:30:00", "06:30:00", "07:30:00", "10:30:00", "12:30:00", "15:30:00", "16:30:00", "18:30:00", "19:30:00", "22:30:00" ],
+      "Zones": [ "Hestera Garden", "Mount Phylantos" ],
+      "Cards": [
+        {
+          "Name": "Cahni",
+          "Rarity": "Normal"
+        },
+        {
+          "Name": "Euclid",
+          "Rarity": "Uncommon"
+        },
+        {
+          "Name": "Great Celestial Serpent",
+          "Rarity": "Uncommon"
+        },
+        {
+          "Name": "Kirke",
+          "Rarity": "Uncommon"
+        },
+        {
+          "Name": "Prunya",
+          "Rarity": "Uncommon"
+        },
+        {
+          "Name": "Sky Whale",
+          "Rarity": "Uncommon"
+        },
+        {
+          "Name": "Tienis",
+          "Rarity": "Uncommon"
+        },
+        {
+          "Name": "Azakiel",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Belomet",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Diogenes",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Dyna",
+          "Rarity": "Rare"
+        },
+        {
+          "Name": "Ark of Eternity Kayangel",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Lauriel",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Vairgrys",
+          "Rarity": "Legendary"
+        }
+      ],
+      "Rapports": [
+        {
+          "Name": "Credoff's Glass Magnifier",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Great Celestial Serpent Skin",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Light-infused Wine",
+          "Rarity": "Epic"
+        },
+        {
+          "Name": "Lucky Starflower",
+          "Rarity": "Legendary"
+        }
+      ],
+      "Tradeskills": [
+        "(No Pouch)",
+        "Secret Pouch: Scented Pouch",
+        "Secret Pouch: Shiny Pouch"
+      ]
+    }
+  }
+  

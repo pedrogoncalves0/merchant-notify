@@ -57,7 +57,7 @@ export class Logger {
 
     error<TError = Error>(log: string, error?: TError): void {
         const logMessage = this.mountLogMessage(log, 'error');
-        this.appLogger.sendToDiscord(logMessage);
+        this.appLogger.sendToDiscord(`${logMessage}\n\t${error?.toString()}`);
 
         console.error(logMessage, error);
     }

@@ -1,4 +1,13 @@
-import { Client, Events, GatewayIntentBits, Channel } from 'discord.js';
+import { 
+    Client, 
+    Events,
+    GatewayIntentBits,
+    TextChannel, 
+    MessagePayload, 
+    MessageCreateOptions,
+    Message
+} from 'discord.js';
+import { Server } from '../common/enums';
 
 export interface IDiscordClientConfig {
     connection: {
@@ -9,6 +18,14 @@ export interface IDiscordClientConfig {
         blackfang: string;
         kazeros: string;
         appLogs: string;
+    };
+    roles: {
+        arthetine: string;
+        blackfang: string;
+        kazeros: string;
+    };
+    api: {
+        messageBatchSize: number;
     }
 }
 
@@ -38,6 +55,14 @@ export class DiscordClient {
                     blackfang: process.env.DISCORD_BLACKFANG_CHANNEL_ID || "",
                     kazeros: process.env.DISCORD_KAZEROS_CHANNEL_ID || "",
                     appLogs: process.env.DISCORD_APP_LOGS_CHANNEL_ID || "",
+                },
+                roles: {
+                    arthetine: process.env.DISCORD_ARTHETINE_ROLE_ID || "",
+                    blackfang: process.env.DISCORD_BLACKFANG_ROLE_ID || "",
+                    kazeros: process.env.DISCORD_KAZEROS_ROLE_ID || "",
+                },
+                api: {
+                    messageBatchSize: Number(process.env.DISCORD_MESSAGES_BATCH_SIZE || 100)
                 }
             });
         }
@@ -46,10 +71,13 @@ export class DiscordClient {
     }
 
     get arthetineChannelId(): string { return this.config.channels.arthetine }
+    get arthetineRoleId(): string { return this.config.roles.arthetine }
 
     get blackfangChannelId(): string { return this.config.channels.blackfang }
+    get blackfangRoleId(): string { return this.config.roles.blackfang }
 
     get kazerosChannelId(): string { return this.config.channels.kazeros }
+    get kazerosRoleId(): string { return this.config.roles.kazeros }
 
     get appLogsChannelId(): string { return this.config.channels.appLogs }
 
@@ -80,15 +108,74 @@ export class DiscordClient {
         });
     }
 
-    async sendTextToChannel<TData = string>(channelId: string, data: TData): Promise<void> {
-        const channel = this.client.channels.cache.get(channelId) as Channel & { send: any };
+    async sendTextToChannel(
+        channelId: string, data: string | MessagePayload | MessageCreateOptions
+    ): Promise<void> {
+        const channel = this.getChannel(channelId);
+        await channel.send(data);
+    }
+
+    async sendTextWIthImage(
+        channelId: string,
+        data: string,
+        url: string
+    ): Promise<void> {
+        const channel = this.getChannel(channelId);
+
+        await channel.send({ content: data, files: [url] } as MessageCreateOptions);
+    }
+
+    async replyMessageWIthImage(
+        message: Message,
+        data: string,
+        url: string
+    ): Promise<void> {
+        await message.reply({ content: data, files: [url] } as MessageCreateOptions);
+    }
+
+    async editMessage(
+        message: Message,
+        data: string
+    ): Promise<void> {
+        await message.edit(data);
+    }
+
+    getChannelIdFromServer(server: Server): string {
+        const serverSwitchMap = {
+            [Server.Arthetine]: this.arthetineChannelId,
+            [Server.Blackfang]: this.blackfangChannelId,
+            [Server.Kazeros]: this.kazerosChannelId,
+        }
+
+        return serverSwitchMap[server];
+    }
+
+    getRoleIdFromServer(server: Server): string {
+        const serverSwitchMap = {
+            [Server.Arthetine]: this.arthetineRoleId,
+            [Server.Blackfang]: this.blackfangRoleId,
+            [Server.Kazeros]: this.kazerosRoleId,
+        }
+
+        return serverSwitchMap[server];
+    }
+
+    async findMessage(channelId: string, contentIdentifier: string): Promise<Message | undefined> {
+        const channel = this.getChannel(channelId);
+        const messages = await channel.messages.fetch({
+            limit: this.config.api.messageBatchSize,
+        })
+
+        return messages.find(m => m.content?.includes(contentIdentifier));
+    }
+
+    private getChannel(channelId: string): TextChannel {
+        const channel = this.client.channels.cache.get(channelId) as TextChannel;
 
         if (!channel) {
             throw new Error(`[Discord] Channel with ID ${channelId} was not found!`);
         }
 
-        console.log(channel)
-
-        await channel.send(data);
+        return channel;
     }
 }

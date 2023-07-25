@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tsc",
-    "start": "npm run build && node build/main.js"
+    "start": "node build/main.js",
+    "live-reload": "nodemon",
+    "dev": "ts-node src/main.ts"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +21,8 @@
   "devDependencies": {
     "@types/node": "^20.4.4",
     "@types/websocket": "^1.0.5",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
     "typescript": "^5.1.6"
   }
 }

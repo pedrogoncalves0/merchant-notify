@@ -18,7 +18,9 @@ export enum MessageType {
     GetKnownActiveMerchantGroupsResponse = 'GET_KNOWN_ACTIVE_MERCHANT_GROUPS_RESPONSE'
 }
 
-type MessageCallback<T = any> = (server: Server | null | undefined, data: T) => void;
+type MessageCallback<T = any> = (server: LostArkServer, data: T) => void;
+
+export type LostArkServer = Server | null | undefined;
 
 export class LostMerchantsClient {
     private logger: Logger;
@@ -177,7 +179,7 @@ export class LostMerchantsClient {
                 this.registeredCallbacks
                     .get(MessageType.UpdateVotes)
                     ?.forEach((callback) => 
-                        callback(null, votesUpdated as IMerchantVote)
+                        callback(null, votesUpdated as IMerchantVote[])
                     )
             } else if (Array.isArray(data.result) && data.result.length) {
                 const results = data.result;
