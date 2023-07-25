@@ -18,9 +18,10 @@ const main = async () => {
         lostMerchantsClient
     );
 
+    console.log('[APP] sleeping...');
+
     while(true) {
-        console.log('[APP] sleeping...');
-        await sleep(60000)
+        await sleep(120000)
     }
 }
 

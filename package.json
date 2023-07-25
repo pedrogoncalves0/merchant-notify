@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tsc",
-    "start": "node build/main.js",
+    "start": "npm run build && node build/main.js",
     "live-reload": "nodemon",
     "dev": "ts-node src/main.ts"
   },
