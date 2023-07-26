@@ -7,14 +7,11 @@ import { Server } from "../common/enums";
 
 export class NotifyMerchantsService {
     private discord: DiscordClient;
-    private lostMerchants: LostMerchantsClient;
 
     private logger: Logger;
 
-    constructor(discord: DiscordClient, lostMerchants: LostMerchantsClient) {
+    constructor(discord: DiscordClient, _lostMerchants: LostMerchantsClient) {
         this.discord = discord;
-        this.lostMerchants = lostMerchants;
-
         this.logger = new Logger('NotifyMerchantsService');
     }
 
@@ -34,17 +31,26 @@ export class NotifyMerchantsService {
             const merchant = merchantGroup.activeMerchants[0];
             const isLegendary = this.isLegendary(merchant);
 
-            await this.discord.sendTextWIthImage(
-                channelId,
-                spoiler(messageIdentifer) +
+            const messageContent = spoiler(messageIdentifer) +
                 '\n' +
                 this.getMerchantMessage(server, merchantGroup) +
                 '\n' +
                 '\n' +
-                this.getMerchantInfo(merchant),
+                this.getMerchantInfo(merchant);
+
+            const message = await this.discord.sendTextWIthImage(
+                channelId,
+                messageContent,
                 `https://lostmerchants.com/images/zones/${merchant.zone.replaceAll(' ', '%20')}.jpg`,
                 !isLegendary
-            )
+            );
+
+            if (isLegendary) {
+                const thread = await this.discord.createThread(message, merchant.card.name);
+                const roleId = this.discord.getRoleIdFromServer(server || merchantGroup.server);
+
+                await this.discord.sendTextToChannel(thread.id, roleMention(roleId));
+            }
         } catch (err) {
             this.logger.error('failed to notify new merchant appearance', err);
         }
@@ -65,17 +71,30 @@ export class NotifyMerchantsService {
             const merchant = merchantGroup.activeMerchants[0];
             const isLegendary = this.isLegendary(merchant);
 
-            await this.discord.replyMessageWIthImage(
-                message,
-                spoiler(messageIdentifer) +
+            const messageContent = spoiler(messageIdentifer) +
                 '\n' +
                 this.getReplaceMerchantMessage(server, merchantGroup) +
                 '\n' +
                 '\n' +
-                this.getMerchantInfo(merchant),
+                this.getMerchantInfo(merchant);
+
+            const replyMessage = await this.discord.replyMessageWIthImage(
+                message,
+                messageContent,
                 `https://lostmerchants.com/images/zones/${merchant.zone.replaceAll(' ', '%20')}.jpg`,
                 !isLegendary
-            )
+            );
+
+            if (message.hasThread) {
+                await message.thread?.delete();
+            }
+
+            if (isLegendary) {
+                const thread = await this.discord.createThread(replyMessage, merchant.card.name);
+                const roleId = this.discord.getRoleIdFromServer(server || merchantGroup.server);
+
+                await this.discord.sendTextToChannel(thread.id, roleMention(roleId));
+            }
         } catch (err) {
             this.logger.error('failed to replace wrong merchant appearance', err);
         }
@@ -103,10 +122,15 @@ export class NotifyMerchantsService {
     }
 
     private getMerchantInfo(merchant: IMerchant): string {
+        const isLegendary = this.isLegendary(merchant);
+        const cardName = isLegendary 
+            ? `:star: ${merchant.card.name} :star:` 
+            : merchant.card.name;
+
         return blockQuote(
             `${bold(merchant.name)} em ${bold(merchant.zone)}, ${bold(this.getMerchantRegion(merchant))}` +
             '\n' +
-            bold('Carta: ') + merchant.card.name +
+            bold('Carta: ') + cardName +
             '\n' +
             bold('Rapport: ') + merchant.rapport.name +
             '\n' +

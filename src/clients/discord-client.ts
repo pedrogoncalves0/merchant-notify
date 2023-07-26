@@ -5,7 +5,8 @@ import {
     TextChannel, 
     MessagePayload, 
     MessageCreateOptions,
-    Message
+    Message,
+    AnyThreadChannel
 } from 'discord.js';
 import { Server } from '../common/enums';
 
@@ -110,9 +111,9 @@ export class DiscordClient {
 
     async sendTextToChannel(
         channelId: string, data: string | MessagePayload | MessageCreateOptions
-    ): Promise<void> {
+    ): Promise<Message> {
         const channel = this.getChannel(channelId);
-        await channel.send(data);
+        return channel.send(data);
     }
 
     async sendTextWIthImage(
@@ -120,7 +121,7 @@ export class DiscordClient {
         data: string,
         url: string,
         silent = false
-    ): Promise<void> {
+    ): Promise<Message> {
         const channel = this.getChannel(channelId);
         const args: MessageCreateOptions = {
             content: data,
@@ -131,7 +132,7 @@ export class DiscordClient {
             args.flags = [4096];
         }
 
-        await channel.send(args);
+        return channel.send(args);
     }
 
     async replyMessageWIthImage(
@@ -139,7 +140,7 @@ export class DiscordClient {
         data: string,
         url: string,
         silent = false
-    ): Promise<void> {
+    ): Promise<Message> {
         const args: MessageCreateOptions = {
             content: data,
             files: [url] 
@@ -149,14 +150,35 @@ export class DiscordClient {
             args.flags = [4096];
         }
 
-        await message.reply(args);
+        return message.reply(args);
     }
 
     async editMessage(
         message: Message,
         data: string
-    ): Promise<void> {
-        await message.edit(data);
+    ): Promise<Message> {
+        return message.edit(data);
+    }
+
+    async createThread(
+        message: Message,
+        name: string,
+        expiresIn: number = 25 * 60 * 1000
+    ): Promise<AnyThreadChannel> {
+        const thread = await message.startThread({ name });
+
+        setTimeout(
+            async () => {
+                try {
+                    await thread.delete();
+                } catch (err) {
+                    console.error('failed to remove thread', err);
+                }
+            },
+            expiresIn
+        )
+
+        return thread;
     }
 
     getChannelIdFromServer(server: Server): string {
