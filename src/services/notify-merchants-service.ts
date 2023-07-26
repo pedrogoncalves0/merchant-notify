@@ -31,8 +31,8 @@ export class NotifyMerchantsService {
         try {
             const channelId = this.discord.getChannelIdFromServer(server || merchantGroup.server);
             const messageIdentifer = this.getMessageIdentifier(merchantGroup);
-
             const merchant = merchantGroup.activeMerchants[0];
+            const isLegendary = this.isLegendary(merchant);
 
             await this.discord.sendTextWIthImage(
                 channelId,
@@ -40,14 +40,47 @@ export class NotifyMerchantsService {
                 '\n' +
                 this.getMerchantMessage(server, merchantGroup) +
                 '\n' +
+                '\n' +
                 this.getMerchantInfo(merchant),
-                `https://lostmerchants.com/images/zones/${merchant.zone.replaceAll(' ', '%20')}.jpg`
+                `https://lostmerchants.com/images/zones/${merchant.zone.replaceAll(' ', '%20')}.jpg`,
+                !isLegendary
             )
         } catch (err) {
             this.logger.error('failed to notify new merchant appearance', err);
         }
     }
-    
+
+    async replaceWrongMerchantAppearance(server: LostArkServer, merchantGroup: IMerchantGroup): Promise<void> {
+        try {
+            const message = await this.discord.findMessage(
+                this.discord.getChannelIdFromServer(server || merchantGroup.server),
+                this.getMessageIdentifier(merchantGroup)
+            );
+
+            if (!message) {
+                throw new Error('original message not found');
+            }
+
+            const messageIdentifer = this.getMessageIdentifier(merchantGroup);
+            const merchant = merchantGroup.activeMerchants[0];
+            const isLegendary = this.isLegendary(merchant);
+
+            await this.discord.replyMessageWIthImage(
+                message,
+                spoiler(messageIdentifer) +
+                '\n' +
+                this.getReplaceMerchantMessage(server, merchantGroup) +
+                '\n' +
+                '\n' +
+                this.getMerchantInfo(merchant),
+                `https://lostmerchants.com/images/zones/${merchant.zone.replaceAll(' ', '%20')}.jpg`,
+                !isLegendary
+            )
+        } catch (err) {
+            this.logger.error('failed to replace wrong merchant appearance', err);
+        }
+    }
+
     async updateMerchantVotes(merchantVote: IMerchantVote): Promise<void> {
         try {
             const message = 
@@ -66,34 +99,6 @@ export class NotifyMerchantsService {
         } catch (err) {
             console.error(err);
             this.logger.info('failed to update merchant votes');
-        }
-    }
-
-    async replaceWrongMerchantAppearance(server: LostArkServer, merchantGroup: IMerchantGroup): Promise<void> {
-        try {
-            const message = await this.discord.findMessage(
-                this.discord.getChannelIdFromServer(server || merchantGroup.server),
-                this.getMessageIdentifier(merchantGroup)
-            );
-
-            if (!message) {
-                throw new Error('original message not found');
-            }
-
-            const messageIdentifer = this.getMessageIdentifier(merchantGroup);
-            const merchant = merchantGroup.activeMerchants[0];
-
-            await this.discord.replyMessageWIthImage(
-                message,
-                spoiler(messageIdentifer) +
-                '\n' +
-                this.getReplaceMerchantMessage(server, merchantGroup) +
-                '\n' +
-                this.getMerchantInfo(merchant),
-                `https://lostmerchants.com/images/zones/${merchant.zone.replaceAll(' ', '%20')}.jpg`
-            )
-        } catch (err) {
-            this.logger.error('failed to replace wrong merchant appearance', err);
         }
     }
 
@@ -118,9 +123,7 @@ export class NotifyMerchantsService {
 
     private getMerchantMessage(server: LostArkServer, merchantGroup: IMerchantGroup): string {
         const merchant = merchantGroup.activeMerchants[0];
-
-        const legendaryMerchants = ["Wei", "Balthorr", "Delain Armen", "Vairgrys"];
-        const isLegendary = legendaryMerchants.includes(merchant.card.name);
+        const isLegendary = this.isLegendary(merchant);
 
         if (isLegendary) {
             const roleId = this.discord.getRoleIdFromServer(server || merchantGroup.server);
@@ -133,9 +136,7 @@ export class NotifyMerchantsService {
 
     private getReplaceMerchantMessage(server: LostArkServer, merchantGroup: IMerchantGroup): string {
         const merchant = merchantGroup.activeMerchants[0];
-
-        const legendaryMerchants = ["Wei", "Balthorr", "Delain Armen", "Vairgrys"];
-        const isLegendary = legendaryMerchants.includes(merchant.card.name);
+        const isLegendary = this.isLegendary(merchant);
 
         if (isLegendary) {
             const roleId = this.discord.getRoleIdFromServer(server || merchantGroup.server);
@@ -143,6 +144,13 @@ export class NotifyMerchantsService {
         } else {
             return 'Se fudeu era bait kkkk, o mercador certo é esse aqui';
         }
+    }
+
+    private isLegendary(merchant: IMerchant): boolean {
+        const legendaryMerchants = ["Wei", "Balthorr", "Delain Armen", "Vairgrys"];
+        const isLegendary = legendaryMerchants.includes(merchant.card.name);
+
+        return isLegendary;
     }
 
     private getMessageIdentifier(merchantGroup: IMerchantGroup): string {

@@ -118,19 +118,38 @@ export class DiscordClient {
     async sendTextWIthImage(
         channelId: string,
         data: string,
-        url: string
+        url: string,
+        silent = false
     ): Promise<void> {
         const channel = this.getChannel(channelId);
+        const args: MessageCreateOptions = {
+            content: data,
+            files: [url] 
+        };
 
-        await channel.send({ content: data, files: [url] } as MessageCreateOptions);
+        if (silent) {
+            args.flags = [4096];
+        }
+
+        await channel.send(args);
     }
 
     async replyMessageWIthImage(
         message: Message,
         data: string,
-        url: string
+        url: string,
+        silent = false
     ): Promise<void> {
-        await message.reply({ content: data, files: [url] } as MessageCreateOptions);
+        const args: MessageCreateOptions = {
+            content: data,
+            files: [url] 
+        };
+
+        if (silent) {
+            args.flags = [4096];
+        }
+
+        await message.reply(args);
     }
 
     async editMessage(
