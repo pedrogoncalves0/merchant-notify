@@ -50,8 +50,8 @@ export class LostMerchantsClient {
             this.instance = new LostMerchantsClient({
                 connection: {
                     wssUri: process.env.LOST_MERCHANTS_WSS_URI || "",
-                    maxRetriesAllowed: Number(process.env.LOST_MERCHANTS_WSS_URI || 10),
-                    retriesInterval: Number(process.env.LOST_MERCHANTS_WSS_URI || 5000),
+                    maxRetriesAllowed: Number(process.env.LOST_MERCHANTS_MAX_RETRIES_ALLOWED || 10),
+                    retriesInterval: Number(process.env.LOST_MERCHANTS_RETRIES_INTERVAL || 5000),
                 },
             });
         }
