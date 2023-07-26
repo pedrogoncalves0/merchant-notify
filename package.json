@@ -8,7 +8,13 @@
     "build": "npx tsc",
     "start": "npm run build && node build/main.js",
     "live-reload": "nodemon",
-    "dev": "ts-node src/main.ts"
+    "dev": "ts-node src/main.ts",
+    "pm2:start": "pm2 start build/main.js --name merchant-notify",
+    "pm2:restart": "pm2 restart merchant-notify",
+    "pm2:stop": "pm2 stop merchant-notify",
+    "pm2:delete": "pm2 delete merchant-notify",
+    "pm2:monit": "pm2 monit merchant-notify",
+    "pm2:logs": "pm2 logs merchant-notify"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +22,7 @@
   "dependencies": {
     "discord.js": "^14.11.0",
     "dotenv": "^16.3.1",
+    "pm2": "^5.3.0",
     "websocket": "^1.0.34"
   },
   "devDependencies": {
