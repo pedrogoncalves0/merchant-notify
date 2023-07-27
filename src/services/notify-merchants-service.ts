@@ -15,6 +15,14 @@ export class NotifyMerchantsService {
         this.logger = new Logger('NotifyMerchantsService');
     }
 
+    canNotifyMerchant(merchantGroup: IMerchantGroup): boolean {
+        const notifyOnlyLegendaryCards = process.env.NOTIFY_ONLY_LEGENDARY_CARDS == 'true';
+        const merchant = merchantGroup.activeMerchants[0];
+        const isLegendary = this.isLegendary(merchant);
+
+        return !notifyOnlyLegendaryCards || isLegendary;
+    }
+
     async isNewMerchantAppearance(server: LostArkServer, merchantGroup: IMerchantGroup): Promise<boolean> {
         const message = await this.discord.findMessage(
             this.discord.getChannelIdFromServer(server || merchantGroup.server),
@@ -108,7 +116,8 @@ export class NotifyMerchantsService {
                 (await this.discord.findMessage(this.discord.getChannelIdFromServer(Server.Kazeros), merchantVote.id));
 
             if (!message) {
-                throw new Error('original message not found');
+                this.logger.info('original message not found');
+                return;
             }
 
             const originalMessage = message.content;
