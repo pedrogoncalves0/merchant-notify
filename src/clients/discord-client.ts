@@ -110,10 +110,16 @@ export class DiscordClient {
     }
 
     async sendTextToChannel(
-        channelId: string, data: string | MessagePayload | MessageCreateOptions
+        channelId: string,
+        data: string,
+        silent = false
     ): Promise<Message> {
         const channel = this.getChannel(channelId);
-        return channel.send(data);
+        const args: MessageCreateOptions = { content: data };
+
+        if (silent) args.flags = [4096];
+
+        return channel.send(args);
     }
 
     async sendTextWIthImage(

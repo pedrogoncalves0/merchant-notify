@@ -35,6 +35,7 @@ export class AppLogger {
                 .sendTextToChannel(
                     this.discord.appLogsChannelId,
                     data,
+                    true
                 )
         } catch (err) {
             console.error('[AppLogger] Failed to send log message to discord', err);
